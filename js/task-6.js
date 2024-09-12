@@ -31,13 +31,16 @@ btn.addEventListener("click", (event) => {
 
 function createBoxes(amount) {
   let widthHeight = 30;
+  let boxesContent = "";
   for (let i = 0; i < amount; i++) {
-    let div = document.createElement("div");
-
-    mainDiv.append(div);
-    div.style.backgroundColor = randomRGB(getRandomHexColor());
-    div.style.width = `${widthHeight}px`;
-    div.style.height = `${widthHeight}px`;
+    boxesContent += `<div style="width:${widthHeight}px; height:${widthHeight}px; background-color:${randomRGB(
+      getRandomHexColor()
+    )}"></div> `;
     widthHeight += 10;
   }
+  mainDiv.innerHTML = boxesContent;
 }
+
+// function createBoxes(amount) {
+//   console.log(input.value);
+// }
